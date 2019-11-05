@@ -52,6 +52,11 @@ app.get("/patients", (req, res) => {
 });
 //create
 app.post("/patients", (req, res) => {
+  if (req.body.check_insurance === "on") {
+    req.body.check_insurance = true;
+  } else {
+    req.body.check_insurance = false;
+  }
   Patient.create(req.body, (error, createdPatient) => {
     if (error) {
       res.send(error);
@@ -64,12 +69,12 @@ app.post("/patients", (req, res) => {
 //show by patinet
 app.get("/patients/:id", (req, res) => {
   Patient.findById(req.params.id, (error, foundPatient) => {
-    res.render("show.ejs", { product: foundPatient });
+    res.render("shows.ejs", { patient: foundPatient });
   });
 });
 //delete patient data
 app.delete("/patients/:id", (req, res) => {
-  Patint.findByIdAndRemove(req.params.id, () => {
+  Patient.findByIdAndRemove(req.params.id, () => {
     res.redirect("/patients");
   });
 });
@@ -79,7 +84,7 @@ app.get("/patients/:id/edit", (req, res) => {
     if (error) {
       console.log(error);
     } else {
-      res.render("edit.ejs", { product: foundPatient });
+      res.render("edit.ejs", { patient: foundPatient });
     }
   });
 });
@@ -95,7 +100,6 @@ app.put("/patients/:id", (req, res) => {
       } else {
         res.redirect("/patients");
       }
-      res.send(updatedPatient);
     }
   );
 });

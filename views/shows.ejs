@@ -20,9 +20,6 @@
       <p>Co-Pay: <%=patient.co_pay%></p>
       <a href="/patients/<%=patient.id%>/edit">Edit this patient</a>
 
-      <form action="/patients/<%=patient.id%>/buy?_method=PUT" method="POST">
-        <input type="submit" value="BUY" />
-      </form>
       <form action="/patients/<%=patient.id%>?_method=DELETE" method="POST">
         <br />
         <input type="submit" class="submit" value="DELETE" />

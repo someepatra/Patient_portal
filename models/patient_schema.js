@@ -8,6 +8,7 @@ const patientSchema = new Schema(
     d_o_b: { type: String },
     contact: { type: Number },
     email: { type: String },
+    check_insurance: { type: Boolean },
     insurance: { type: String },
     co_pay: { type: Number }
   }

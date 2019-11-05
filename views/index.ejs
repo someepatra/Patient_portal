@@ -11,21 +11,21 @@
     <button class="center">
       <a href="/patients/new">Add a New Patient</a>
     </button>
-    <h1>Patients Details</h1>
+    <h1>All patients</h1>
 
     <div class="container">
-      <% for(let i = 0; i < patient.length; i++) { %>
-      <p>
-        LAST_NAME:<a href="/patients/<%=patient[i].last_name %>"
-          ><%=patient[i].last_name%></a
-        >
-      </p>
-      <br />
-      FIRST_NAME: <%=patient[i].first_name; %><br />
-      INSURANCE: <%=patient[i].insurance; %><br />
+      <ol>
+        <% for(let i = 0; i < patient.length; i++) { %>
+        <li>
+          LAST_NAME:<a href="/patients/<%=patient[i]._id %>"
+            ><%=patient[i].last_name%></a
+          >
 
-      <br />
-      <% } %>
+          <!-- <p>FIRST_NAME: <%=patient[i].first_name; %></p>
+      <p>INSURANCE: <%=patient[i].insurance; %></p> -->
+        </li>
+        <% } %>
+      </ol>
     </div>
   </body>
 </html>
