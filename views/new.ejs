@@ -14,10 +14,10 @@
     <!-- ============= CONTAINER ============== -->
     <div class="container">
       <!-- sidebar -->
-      <div class="sidebar"></div>
+      <!-- <div class="sidebar"></div> -->
       <!-- registration container -->
       <div class="registration">
-        <h1>PATIENT REGISTRATION</h1>
+        <h1>PATIENT REGISTRATION FORM</h1>
         <!-- START FORM -->
         <form action="/patients" method="POST">
           <!-- fieldset for account info -->
@@ -44,23 +44,33 @@
               id="check_insurance"
             />
 
-            <label for="insurance">INSURANCE</label>
-            <input type="text" name="insurance" id="insurance" />
+            <label id="insuranceLabel" for="insurance" class="hideInsurance"
+              >INSURANCE</label
+            >
+            <!-- <input type="text" name="insurance" id="insurance" /> -->
+            <select name="insurance" id="insurance" class="hideInsurance">
+              <optgroup label="Select One">
+                <option value="Atena">Atena</option>
+                <option value="Signa">Signa</option>
+                <option value="UnitedWay">United Way</option>
+                <option value="ObamaCare">Obama Care</option>
+              </optgroup>
+            </select>
 
             <label for="co_pay">Co-Pay</label>
-            <input type="number" name="co_pay" id="co_pay" />
+            <input type="number" name="co_pay" id="co_pay" value="100" />
           </fieldset>
           <!-- fieldset for profile info -->
-          <fieldset class="profile-info">
-            <!-- legend for profile info -->
-            <!-- <legend>REASON TO VISIT</legend> -->
-            <!-- biography -->
-            <!-- <label for="biography">SYMPTOMS</label> -->
-            <!-- textarea for larger bodies of text -->
-            <!-- <textarea id="biography"></textarea> -->
-          </fieldset>
+          <!-- <fieldset class="profile-info"> -->
+          <!-- legend for profile info -->
+          <!-- <legend>REASON TO VISIT</legend> -->
+          <!-- biography -->
+          <!-- <label for="biography">SYMPTOMS</label> -->
+          <!-- textarea for larger bodies of text -->
+          <!-- <textarea id="biography"></textarea> -->
+          <!-- </fieldset> -->
           <!-- submit button -->
-          <input type="submit" value="Create new Patient" />
+          <input type="submit" value="New Patient Added" />
         </form>
       </div>
     </div>

@@ -56,6 +56,8 @@ app.post("/patients", (req, res) => {
     req.body.check_insurance = true;
   } else {
     req.body.check_insurance = false;
+    req.body.insurance = "None";
+    req.body.co_pay = 100;
   }
   Patient.create(req.body, (error, createdPatient) => {
     if (error) {

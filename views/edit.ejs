@@ -4,28 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Edit Patient</title>
+    <title>Edit Patient Portal</title>
+    <link rel="stylesheet" href="/css/main.css" />
   </head>
   <body>
+      <div class="container">
+      <fieldset class="account-info">
+      <legend>PATIENT INFORMATION</legend>
     <form action="/patients/<%=patient.id%>?_method=PUT" method="POST">
       LAST_NAME:
-      <input type="text" name="name" value="<%=patient.last_name%>" /><br />
+      <input
+        type="text"
+        name="last_name" id="last_name"
+        value="<%=patient.last_name%>"
+      /><br />
       FIRST_NAME:
-      <input type="text" name="name" value="<%=patient.first_name%>" /><br />
+      <input
+        type="text"
+        name="first_name" id="first_name"
+        value="<%=patient.first_name%>"
+      /><br />
       ADDRESS:
-      <input type="text" name="name" value="<%=patient.address%>" /><br />
-      D.O.B: <input type="date" name="name" value="<%=patient.d_o_b%>" /><br />
+      <input type="text" name="address" value="<%=patient.address%>" /><br />
+      D.O.B: <input type="date" name="d_o_b" value="<%=patient.d_o_b%>" /><br />
       CONTACT:
-      <input type="number" name="name" value="<%=patient.contact%>" /><br />
+      <input type="number" name="contact" value="<%=patient.contact%>" /><br />
       E-MAIL:
-      <input type="email" name="name" value="<%=patient.email%>" /><br />
+      <input type="email" name="email" value="<%=patient.email%>" /><br />
       INSURANCE:
-      <input type="text" name="name" value="<%=patient.insurance%>" /><br />
+      <input
+        type="text"
+        name="insurance"
+        value="<%=patient.insurance%>"
+      /><br />
 
       Co-Pay:
-      <input type="number" name="price" value="<%=patient.co_pay%>" /><br />
+      <input type="number" name="co_pay" value="<%=patient.co_pay%>" /><br />
 
       <input type="submit" name="" value="Submit Changes" />
+    </fieldset>
     </form>
+  </div>
   </body>
 </html>
