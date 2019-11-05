@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Edit Patient</title>
+  </head>
+  <body>
+    <form action="/patients/<%=patient.id%>?_method=PUT" method="POST">
+      LAST_NAME:
+      <input type="text" name="name" value="<%=patient.lastname%>" /><br />
+      FIRST_NAME:
+      <input type="text" name="name" value="<%=patient.firstname%>" /><br />
+      ADDRESS:
+      <input type="text" name="name" value="<%=patient.address%>" /><br />
+      D.O.B: <input type="date" name="name" value="<%=patient.d_o_b%>" /><br />
+      CONTACT:
+      <input type="number" name="name" value="<%=patient.contact%>" /><br />
+      E-MAIL:
+      <input type="email" name="name" value="<%=patient.email%>" /><br />
+      INSURANCE:
+      <input type="text" name="name" value="<%=patient.insurance%>" /><br />
+
+      Co-Pay:
+      <input type="number" name="price" value="<%=patient.co_pay%>" /><br />
+
+      <input type="submit" name="" value="Submit Changes" />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>REGISTRATION</title>
+    <!-- STYLES -->
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald:200,400,500"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- ============= CONTAINER ============== -->
+    <div class="container">
+      <!-- sidebar -->
+      <div class="sidebar"></div>
+      <!-- registration container -->
+      <div class="registration">
+        <h1>PATIENT REGISTRATION</h1>
+        <!-- START FORM -->
+        <form action="/patients" method="POST">
+          <!-- fieldset for account info -->
+          <fieldset class="account-info">
+            <!-- legend for account info -->
+            <legend>PATIENT INFORMATION</legend>
+            <!-- username -->
+            <label for="last_name">LAST_NAME</label>
+            <input type="text" name="last_name" id="last_name" />
+            <label for="first_name">FIRST_NAME</label>
+            <input type="text" name="first_name" id="first_name" />
+            <label for="address">ADDRESS</label>
+            <input type="text" name="address" id="address" />
+            <label for="d_o_b">D.O.B.</label>
+            <input type="date" name="d_o_b" id="d_o_b" />
+            <label for="contact">CONTACT</label>
+            <input type="number" name="contact" id="contact" />
+            <label for="email">E-MAIL</label>
+            <input type="email" name="email" id="email" />
+            <label for="insurance">INSURANCE</label>
+            <input type="text" name="insurance" id="insurance" />
+            <label for="co_pay">Co-Pay</label>
+            <input type="number" name="co_pay" id="co_pay" />
+          </fieldset>
+          <!-- fieldset for profile info -->
+          <fieldset class="profile-info">
+            <!-- legend for profile info -->
+            <!-- <legend>REASON TO VISIT</legend> -->
+            <!-- biography -->
+            <!-- <label for="biography">SYMPTOMS</label> -->
+            <!-- textarea for larger bodies of text -->
+            <!-- <textarea id="biography"></textarea> -->
+          </fieldset>
+          <!-- submit button -->
+          <input type="submit" value="Create new Patient" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

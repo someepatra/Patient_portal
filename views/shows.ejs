@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Show</title>
+    <!-- <link rel="stylesheet" href="/main.css" /> -->
+  </head>
+  <body>
+    <a href="/patients"> Go to Index page</a>
+    <div class="container">
+      <p>LAST_NAME: <%=patient.last_name%></p>
+      <p>FIRST_NAME: <%=patient.first_name%></p>
+      <p>ADDRESS: <%=patient.address%></p>
+      <p>D.O.B: <%=patient.d_o_b%></p>
+      <p>CONTACT: <%=patient.contact%></p>
+      <p>email: <%=patient.email%></p>
+      <p>INSURANCE: <%=patient.insurance%></p>
+      <p>Co-Pay: <%=patient.co_pay%></p>
+      <a href="/patients/<%=patient.id%>/edit">Edit this patient</a>
+
+      <form action="/patients/<%=patient.id%>/buy?_method=PUT" method="POST">
+        <input type="submit" value="BUY" />
+      </form>
+      <form action="/patients/<%=patient.id%>?_method=DELETE" method="POST">
+        <br />
+        <input type="submit" class="submit" value="DELETE" />
+      </form>
+    </div>
+  </body>
+</html>
