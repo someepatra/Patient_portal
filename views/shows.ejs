@@ -5,21 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Show</title>
-    <!-- <link rel="stylesheet" href="/main.css" /> -->
+    <link rel="stylesheet" href="/css/main.css" />
   </head>
   <body>
-    <a href="/patients"> Go to Index page</a>
     <div class="container">
-      <p>LAST_NAME: <%=patient.last_name%></p>
-      <p>FIRST_NAME: <%=patient.first_name%></p>
-      <p>ADDRESS: <%=patient.address%></p>
-      <p>D.O.B: <%=patient.d_o_b%></p>
-      <p>CONTACT: <%=patient.contact%></p>
-      <p>email: <%=patient.email%></p>
-      <p>INSURANCE: <%=patient.insurance%></p>
-      <p>Co-Pay: <%=patient.co_pay%></p>
-      <a href="/patients/<%=patient.id%>/edit">Edit this patient</a>
-
+      <h1>Patient Details</h1>
+      <button class="center">
+        <a href="/patients">All Pataients Page</a>
+      </button>
+      <fieldset>
+        <legend>PATIENT INFORMATION</legend>
+        <p>LAST_NAME: <%=patient.last_name%></p>
+        <p>FIRST_NAME: <%=patient.first_name%></p>
+        <p>ADDRESS: <%=patient.address%></p>
+        <p>D.O.B: <%=patient.d_o_b%></p>
+        <p>CONTACT: <%=patient.contact%></p>
+        <p>email: <%=patient.email%></p>
+        <p>INSURANCE: <%=patient.insurance%></p>
+        <p>Co-Pay: <%=patient.co_pay%></p>
+      </fieldset>
+      <button class="center">
+        <a href="/patients/<%=patient.id%>/edit">Edit Patient Details</a>
+      </button>
       <form action="/patients/<%=patient.id%>?_method=DELETE" method="POST">
         <br />
         <input type="submit" class="submit" value="DELETE" />
