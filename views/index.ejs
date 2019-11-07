@@ -6,11 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <title>index</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+
     <link rel="stylesheet" href="/css/main.css" />
   </head>
   <body>
     <h1>All Existing Patients</h1>
-    <div class="container">
+    <div class="container1">
       <button class="center">
         <a href="/patients/new">Add a New Patient</a>
       </button>
@@ -28,5 +35,8 @@
         <% } %>
       </ol>
     </div>
+    <form action="/sessions?_method=DELETE" method="POST">
+      <input type="submit" value="Logout" />
+    </form>
   </body>
 </html>

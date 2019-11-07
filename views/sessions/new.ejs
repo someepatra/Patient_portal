@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Sign In </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <!-- <img src="/images/portal2.jpg" class="img-fluid" alt="Responsive image" /> -->
+
+    <!-- <img src="/images/portal2.jpg" class="rounded float-left" /> -->
+
+    <figure class="figure">
+      <img src="/images/portal2.jpg" class="figure-img img-fluid rounded" />
+      <figcaption class="figure-caption"</figcaption>
+    </figure>
+    <h1>Sign In</h1>
+
+    <% if(typeof error !== 'undefined') {%>
+    <h2>Invalid Input</h2>
+    <%} %>
+
+    <form action="/sessions" method="POST">
+
+      
+      <input type="text" name="username" placeholder="username" />
+      <input type="password" name="password" placeholder="password"/>
+
+      <input type="submit" class="btn btn-primary"value="Log In" />
+    </form>
+  </body>
+</html>

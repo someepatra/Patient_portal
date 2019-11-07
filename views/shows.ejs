@@ -5,17 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Show</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+
     <link rel="stylesheet" href="/css/main.css" />
   </head>
   <body>
     <div class="container">
-      <h1>Patient Details</h1>
+      <h1><%=patient.first_name%> Details</h1>
       <button class="center">
         <a href="/patients">All Pataients Page</a>
       </button>
       <fieldset>
         <legend>PATIENT INFORMATION</legend>
-        <p>LAST_NAME: <%=patient.last_name%></p>
+        <p>
+          LAST_NAME: <%=patient.last_name.charAt(0).toUpperCase()
+          +patient.last_name.slice(1)%>
+        </p>
         <p>FIRST_NAME: <%=patient.first_name%></p>
         <p>ADDRESS: <%=patient.address%></p>
         <p>D.O.B: <%=patient.d_o_b%></p>
@@ -23,13 +33,20 @@
         <p>email: <%=patient.email%></p>
         <p>INSURANCE: <%=patient.insurance%></p>
         <p>Co-Pay: <%=patient.co_pay%></p>
+        <p>SYMPOTOMS: <%=patient.symptoms%></p>
+        <p>MEDICINE: <%=patient.medicine%></p>
       </fieldset>
       <button class="center">
         <a href="/patients/<%=patient.id%>/edit">Edit Patient Details</a>
       </button>
       <form action="/patients/<%=patient.id%>?_method=DELETE" method="POST">
         <br />
-        <input type="submit" class="submit" value="DELETE" />
+        <input
+          type="submit"
+          class="submit"
+          class="btn btn-secondary"
+          value="DELETE"
+        />
       </form>
     </div>
   </body>

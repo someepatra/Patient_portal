@@ -3,31 +3,32 @@ const express = require("express");
 const router = express.Router();
 //model
 const Patient = require("../models/patient_schema");
-
-// router.listen(port, () => {
-//   console.log("listening on port", port);
+const Symptoms = require("../models/symptoms");
+//test route
+// router.get("/", (req, res) => {
+//   res.send("router is running in patient");
 // });
 
-//test route
-router.get("/", (req, res) => {
-  res.send("router is running in patient");
-});
 //new
-router.get("/patients/new", (req, res) => {
+router.get("/new", (req, res) => {
   res.render("new.ejs");
 });
 //index show all patients
-router.get("/patients", (req, res) => {
-  Patient.find({}, (error, allPatients) => {
-    if (error) {
-      res.send(error);
-    } else {
-      res.render("index.ejs", { patient: allPatients });
-    }
-  });
+router.get("/", (req, res) => {
+  if (req.session.currentUser) {
+    Patient.find({}, (error, allPatients) => {
+      if (error) {
+        res.send(error);
+      } else {
+        res.render("index.ejs", { patient: allPatients });
+      }
+    });
+  } else {
+    res.redirect("/");
+  }
 });
 //create
-router.post("/patients", (req, res) => {
+router.post("/", (req, res) => {
   if (req.body.check_insurance === "on") {
     req.body.check_insurance = true;
   } else {
@@ -35,6 +36,7 @@ router.post("/patients", (req, res) => {
     req.body.insurance = "None";
     req.body.co_pay = 100;
   }
+  console.log(req.body.address);
   Patient.create(req.body, (error, createdPatient) => {
     if (error) {
       res.send(error);
@@ -45,19 +47,19 @@ router.post("/patients", (req, res) => {
 });
 
 //show by patinet
-router.get("/patients/:id", (req, res) => {
+router.get("/:id", (req, res) => {
   Patient.findById(req.params.id, (error, foundPatient) => {
     res.render("shows.ejs", { patient: foundPatient });
   });
 });
 //delete patient data
-router.delete("/patients/:id", (req, res) => {
+router.delete("/:id", (req, res) => {
   Patient.findByIdAndRemove(req.params.id, () => {
     res.redirect("/patients");
   });
 });
 //edit a ptient data
-router.get("/patients/:id/edit", (req, res) => {
+router.get("/:id/edit", (req, res) => {
   Patient.findById(req.params.id, (error, foundPatient) => {
     if (error) {
       console.log(error);
@@ -67,7 +69,7 @@ router.get("/patients/:id/edit", (req, res) => {
   });
 });
 //update patient
-router.put("/patients/:id", (req, res) => {
+router.put("/:id", (req, res) => {
   Patient.findByIdAndUpdate(
     req.params.id,
     req.body,

@@ -6,11 +6,17 @@ $("#check_insurance").on("change", () => {
 
   $("#insurance").toggleClass("hideInsurance");
   $("#insuranceLabel").toggleClass("hideInsurance");
-  $("#co_pay").val("");
+
+  if ($("#insurance").hasClass("hideInsurance")) {
+    $("#co_pay").val("100");
+  } else {
+    $("#co_pay").val("10");
+  }
 });
 
 $("#insurance").on("change", () => {
   console.log("hello");
+  let co_pay;
   if (
     $("#insurance option:selected").val() === "Atena" ||
     $("#insurance option:selected").val() === "ObamaCare"
@@ -25,4 +31,15 @@ $("#insurance").on("change", () => {
 
   console.log(co_pay);
   $("#co_pay").val(co_pay);
+});
+
+$("#symptoms").on("change", () => {
+  console.log("hello");
+  let medicine = "";
+  if ($("#symptoms").val() === "feaver") {
+    medicine = "paracetamol";
+  } else {
+    console.log("try");
+  }
+  $("#medicine").val(medicine);
 });

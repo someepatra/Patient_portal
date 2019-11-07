@@ -3,12 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <title>REGISTRATION</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
     <!-- STYLES -->
     <link rel="stylesheet" href="/css/main.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Oswald:200,400,500"
-      rel="stylesheet"
-    />
   </head>
   <body>
     <!-- ============= CONTAINER ============== -->
@@ -16,8 +14,8 @@
       <!-- sidebar -->
       <!-- <div class="sidebar"></div> -->
       <!-- registration container -->
-      <h1>PATIENT REGISTRATION FORM</h1>
-      <div class="registration">
+      <h1>Patient Registration Form</h1>
+      <!-- <div class="registration"> -->
         <!-- START FORM -->
         <form action="/patients" method="POST">
           <!-- fieldset for account info -->
@@ -44,7 +42,7 @@
               id="check_insurance"
             />
 
-            <label id="insuranceLabel" for="insurance" class="hideInsurance"
+            <label id="insuranceLabel" for="insurance" class="form-control form-control-lg" class="hideInsurance"
               >INSURANCE</label
             >
             <!-- <input type="text" name="insurance" id="insurance" /> -->
@@ -60,19 +58,25 @@
             <label for="co_pay">Co-Pay</label>
             <input type="number" name="co_pay" id="co_pay" value="100" />
           </fieldset>
-          <!-- fieldset for profile info -->
-          <!-- <fieldset class="profile-info"> -->
+          <legend>REASON TO VISIT</legend>
+      <!-- biography -->
+      <label for="symptoms">SYMPTOMS</label> 
+       
+        <input name="symptoms" type="text" id="symptoms"/>
+        <label for="medicine">Medicine</label>
+          <input type="medicine" name="medicine" id="medicine" />
+        </fieldset>
+          <!-- fieldset for profile info --> 
+          <fieldset class="profile-info">
           <!-- legend for profile info -->
-          <!-- <legend>REASON TO VISIT</legend> -->
-          <!-- biography -->
-          <!-- <label for="symptoms">SYMPTOMS</label> -->
           <!-- textarea for larger bodies of text -->
-          <!-- <textarea id="symptoms"></textarea> -->
-          <!-- </fieldset> -->
-          <!-- submit button -->
-          <input type="submit" value="New Patient Added" />
+          <!-- <!-- submit button -->
+          <input  type="submit" value="New Patient Added" />
+          <button class="center">
+            <a href="/patients">Go to Main Page</a>
+          </button>
         </form>
-      </div>
+      
     </div>
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"

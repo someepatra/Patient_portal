@@ -1,7 +1,8 @@
-body {
+/* body {
   background: pink;
   font-family: helvetica;
-}
+} */
+
 h1 {
   font-family: "Oswald";
   font-weight: 500;
@@ -12,8 +13,6 @@ h1 {
   font-family: Lucida Sans;
   color: blue;
   text-align: center;
-}
-.table {
 }
 
 /* CONTAINERS */
@@ -33,14 +32,34 @@ h1 {
   background-repeat: no-repeat;
   border-radius: 10px 0 0 10px;
 } */
-.registration {
-  width: 50%;
+/* .registration {
   background: aqua;
+  background-image: url("/images/portal1.jpg");
+
   border-radius: 0 10px 10px 0;
   padding: 15px;
   box-sizing: border-box;
   overflow: auto;
   color: brown;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 100px;
+  padding-top: 100px;
+  background-size: 500px 500px;
+  border: 2px solid black;
+} */
+.registration {
+  background-image: url("/images/portal1.jpg");
+  /* Full height */
+  height: 20%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 50px;
+  padding-top: 50px;
 }
 
 /* ETC. DECORATION */
@@ -67,6 +86,30 @@ input[type="submit"]:hover {
   background-color: yellowgreen;
   color: green;
   font-size: 20px;
+}
+.container1 {
+  background-image: url("/images/portal1.jpg");
+  /* Full height */
+  height: 20%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+.container {
+  background-image: url("/images/portal1.jpg");
+  /* Full height */
+  height: 20%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 50px;
+  padding-top: 50px;
 }
 
 /* fieldset {

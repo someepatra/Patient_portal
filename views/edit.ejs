@@ -5,45 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Edit Patient Portal</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+
     <link rel="stylesheet" href="/css/main.css" />
   </head>
   <body>
+    <div class="container">
       <div class="registration">
-      <fieldset class="account-info">
-      <legend>PATIENT INFORMATION</legend>
-    <form action="/patients/<%=patient.id%>?_method=PUT" method="POST">
-      LAST_NAME:
-      <input
-        type="text"
-        name="last_name" id="last_name"
-        value="<%=patient.last_name%>"
-      /><br />
-      FIRST_NAME:
-      <input
-        type="text"
-        name="first_name" id="first_name"
-        value="<%=patient.first_name%>"
-      /><br />
-      ADDRESS:
-      <input type="text" name="address" value="<%=patient.address%>" /><br />
-      D.O.B: <input type="date" name="d_o_b" value="<%=patient.d_o_b%>" /><br />
-      CONTACT:
-      <input type="number" name="contact" value="<%=patient.contact%>" /><br />
-      E-MAIL:
-      <input type="email" name="email" value="<%=patient.email%>" /><br />
-      INSURANCE:
-      <input
-        type="text"
-        name="insurance"
-        value="<%=patient.insurance%>"
-      /><br />
+        <form action="/patients/<%=patient.id%>?_method=PUT" method="POST">
+          <h1><%=patient.first_name%> <%=patient.last_name%></h1>
+          <fieldset class="account-info">
+            <legend>PATIENT INFORMATION</legend>
+            <label for="last_name">LAST_NAME</label>
+            <input
+              type="text"
+              name="last_name"
+              id="last_name"
+              value="<%=patient.last_name%>"
+            />
+            <label for="first_name">FIRST_NAME</label>
+            <input
+              type="text"
+              name="first_name"
+              id="first_name"
+              value="<%=patient.first_name%>"
+            /><br />
+            <label for="address">ADDRESS</label>
+            <input
+              type="text"
+              name="address"
+              value="<%=patient.address%>"
+            /><br />
+            <label for="d_o_b">D.O.B.</label>
+            <input type="date" name="d_o_b" value="<%=patient.d_o_b%>" /><br />
+            <label for="contact">CONTACT</label>
+            <input
+              type="number"
+              name="contact"
+              value="<%=patient.contact%>"
+            /><br />
+            <label for="email">E-MAIL</label>
+            <input type="email" name="email" value="<%=patient.email%>" /><br />
 
-      Co-Pay:
-      <input type="number" name="co_pay" value="<%=patient.co_pay%>" /><br />
+            <label for="insurance">INSURANCE</label>
+            <input
+              type="text"
+              name="insurance"
+              value="<%=patient.insurance%>"
+            />
 
-      <input type="submit" name="" value="Submit Changes" />
-    </fieldset>
-    </form>
-  </div>
+            <label for="co_pay">Co-Pay</label>
+            <input type="number" name="co_pay" value="<%=patient.co_pay%>" />
+            <fieldset class="profile-info">
+              <!-- legend for profile info -->
+              <legend>REASON TO VISIT</legend>
+              <!-- biography -->
+              <label for="symptoms">SYMPTOMS</label>
+
+              <textarea
+                name="symptoms"
+                placeholder="<%=patient.symptoms%>"
+                id="symptoms"
+              ></textarea>
+              <!-- textarea for larger bodies of text -->
+              <label for="medicine">MEDICINE</label>
+              <input
+                type="string"
+                name="medicine"
+                value="<%=patient.medicine%>"
+              />
+            </fieldset>
+            <input type="submit" name="" value="Submit Changes" />
+          </fieldset>
+        </form>
+      </div>
+    </div>
   </body>
 </html>

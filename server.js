@@ -2,23 +2,37 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
-const Patient = require("./models/patient_schema.js");
-
+//const Patient = require("./models/patient_schema.js/index.j");
+const session = require("express-session");
 const app = express();
 const db = mongoose.connection;
+
 //port
 const port = 3000;
+
 //controller
 const patient = require("./controller/patient.js");
-//config
-//const Product = require("./models/product_schema.js");
+const symptoms = require("./controller/symptoms.js");
+const usersController = require("./controller/users.js");
+const sessionsController = require("./controller/sessions.js");
 
 //Middleware
 app.use(express.static("public"));
-app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
-app.use(patient);
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(
+  session({
+    secret: "niceidea", //some random string
+    resave: false,
+    saveUninitialized: false
+  })
+);
+app.use("/patients", patient);
+app.use("/symptoms", symptoms);
+app.use("/users", usersController);
+app.use("/sessions", sessionsController);
+
 //connect mongo db
 mongoose.connect("mongodb://localhost:27017/patient_portals", {
   useNewUrlParser: true
@@ -27,10 +41,13 @@ mongoose.connection.once("open", () => {
   console.log("connected to mongo");
 });
 
-// //test route
-// app.get("/", (req, res) => {
-//   res.send("app is running");
-// });
+// //sessions
+app.get("/", (req, res) => {
+  //console.log(req.session);
+  res.render("login.ejs", { currentUser: req.session.currentUser });
+});
+//sessions
+
 //port listen
 app.listen(port, () => {
   console.log("listening on port", port);
