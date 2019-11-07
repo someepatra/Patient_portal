@@ -12,7 +12,7 @@ const patientSchema = new Schema(
     insurance: { type: String },
     co_pay: { type: Number },
     medicine: String,
-    symptoms: [String]
+    symptoms: String
   }
   //{ timestamps: true }
 );

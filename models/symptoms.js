@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const symptomsSchema = Schema({
   medicine: String,
-  symptoms: [String]
+  symptoms: String
 });
 
 const Symptoms = mongoose.model("Symptoms", symptomsSchema);

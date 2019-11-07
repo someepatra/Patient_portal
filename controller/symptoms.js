@@ -1,7 +1,17 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/patients", (req, res) => {
+const Symptoms = require("../models/symptoms.js");
+
+router.get("/all", (req, res) => {
+  Symptoms.find({}, (error, allSymptoms) => {
+    console.log(allSymptoms);
+    res.send(allSymptoms);
+  });
+});
+
+router.get("/seed", (req, res) => {
+  Symptoms.collection.drop();
   Symptoms.create(
     [
       {
@@ -14,11 +24,11 @@ router.get("/patients", (req, res) => {
       },
       {
         symptoms: "acidity",
-        medicine: "an"
+        medicine: "antacid"
       }
     ],
     (err, data) => {
-      res.send("good");
+      res.send(data);
     }
   );
 });

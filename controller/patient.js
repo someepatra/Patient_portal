@@ -3,7 +3,6 @@ const express = require("express");
 const router = express.Router();
 //model
 const Patient = require("../models/patient_schema");
-const Symptoms = require("../models/symptoms");
 //test route
 // router.get("/", (req, res) => {
 //   res.send("router is running in patient");

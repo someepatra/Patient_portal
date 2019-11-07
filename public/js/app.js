@@ -34,12 +34,25 @@ $("#insurance").on("change", () => {
 });
 
 $("#symptoms").on("change", () => {
-  console.log("hello");
-  let medicine = "";
-  if ($("#symptoms").val() === "feaver") {
-    medicine = "paracetamol";
-  } else {
-    console.log("try");
-  }
-  $("#medicine").val(medicine);
+  const endpoint = "http://localhost:3000/symptoms/all";
+
+  $.ajax({
+    url: endpoint
+  }).then(data => {
+    console.log(data);
+    data.forEach(element => {
+      if ($("#symptoms").val() === element.symptoms) {
+        $("#medicine").val(element.medicine);
+      }
+    });
+  });
+  //   let medicine = "";
+  //   if ($("#symptoms").val() === "feaver") {
+  //     medicine = "paracetamol";
+  //   } else if ($("#symptoms").val() === "cold") {
+  //     medicine = "tylinol";
+  //   } else {
+  //     console.log("try");
+  //   }
+  //   $("#medicine").val(medicine);
 });

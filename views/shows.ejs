@@ -26,14 +26,23 @@
           LAST_NAME: <%=patient.last_name.charAt(0).toUpperCase()
           +patient.last_name.slice(1)%>
         </p>
-        <p>FIRST_NAME: <%=patient.first_name%></p>
+        <p>
+          FIRST_NAME: <%=patient.first_name.charAt(0).toUpperCase()
+          +patient.first_name.slice(1)%>
+        </p>
         <p>ADDRESS: <%=patient.address%></p>
         <p>D.O.B: <%=patient.d_o_b%></p>
         <p>CONTACT: <%=patient.contact%></p>
-        <p>email: <%=patient.email%></p>
-        <p>INSURANCE: <%=patient.insurance%></p>
+        <p>Email: <%=patient.email%></p>
+        <p>
+          INSURANCE: <%=patient.insurance.charAt(0).toUpperCase()
+          +patient.insurance.slice(1)%>
+        </p>
         <p>Co-Pay: <%=patient.co_pay%></p>
-        <p>SYMPOTOMS: <%=patient.symptoms%></p>
+        <p>
+          SYMPTOMS: <%=patient.symptoms.charAt(0).toUpperCase()
+          +patient.symptoms.slice(1)%>
+        </p>
         <p>MEDICINE: <%=patient.medicine%></p>
       </fieldset>
       <button class="center">
