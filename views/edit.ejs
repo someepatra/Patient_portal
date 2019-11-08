@@ -18,9 +18,10 @@
     <div class="container">
       <div class="registration">
         <form action="/patients/<%=patient.id%>?_method=PUT" method="POST">
-          <h1><%=patient.first_name%> <%=patient.last_name%></h1>
-          <fieldset class="account-info">
-            <legend>PATIENT INFORMATION</legend>
+          <h1><%=patient.first_name.charAt(0).toUpperCase()
+            +patient.first_name.slice(1)   %>   <%=patient.last_name.charAt(0).toUpperCase()
+        +patient.last_name.slice(1)%>  Informations</h1>
+          
             <label for="last_name">LAST_NAME</label>
             <input
               type="text"
@@ -61,23 +62,28 @@
 
             <label for="co_pay">Co-Pay</label>
             <input type="number" name="co_pay" value="<%=patient.co_pay%>" />
-            <fieldset class="profile-info">
-              <!-- legend for profile info -->
-              <legend>REASON TO VISIT</legend>
-              <!-- biography -->
+        
+              <h1>REASON TO VISIT</h1>
+            
               <label for="symptoms">SYMPTOMS</label>
 
-              <textarea
+              <input
                 name="symptoms"
                 placeholder="<%=patient.symptoms%>"
                 id="symptoms"
-              ></textarea>
-              <!-- textarea for larger bodies of text -->
+              />
+        
               <label for="medicine">MEDICINE</label>
               <input
                 type="string"
                 name="medicine"
                 value="<%=patient.medicine%>"
+              />
+              <label for="pick_up">Pick-Up</label>
+              <input
+                type="string"
+                name="pick_up"
+                value="<%=patient.pick_up.toUpperCase()%>"
               />
             </fieldset>
             <input type="submit" name="" value="Submit Changes" />

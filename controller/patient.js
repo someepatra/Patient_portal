@@ -3,10 +3,6 @@ const express = require("express");
 const router = express.Router();
 //model
 const Patient = require("../models/patient_schema");
-//test route
-// router.get("/", (req, res) => {
-//   res.send("router is running in patient");
-// });
 
 //new
 router.get("/new", (req, res) => {
@@ -35,7 +31,7 @@ router.post("/", (req, res) => {
     req.body.insurance = "None";
     req.body.co_pay = 100;
   }
-  console.log(req.body.address);
+  //console.log(req.body.address);
   Patient.create(req.body, (error, createdPatient) => {
     if (error) {
       res.send(error);

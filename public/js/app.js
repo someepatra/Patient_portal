@@ -39,7 +39,7 @@ $("#symptoms").on("change", () => {
   $.ajax({
     url: endpoint
   }).then(data => {
-    console.log(data);
+    //console.log(data);
     data.forEach(element => {
       if ($("#symptoms").val() === element.symptoms) {
         $("#medicine").val(element.medicine);

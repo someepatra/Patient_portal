@@ -16,35 +16,40 @@
   </head>
   <body>
     <div class="container">
-      <h1><%=patient.first_name%> Details</h1>
+      <h1>
+        <%=patient.first_name.charAt(0).toUpperCase()
+        +patient.first_name.slice(1)%> Details
+      </h1>
       <button class="center">
         <a href="/patients">All Pataients Page</a>
       </button>
-      <fieldset>
-        <legend>PATIENT INFORMATION</legend>
-        <p>
-          LAST_NAME: <%=patient.last_name.charAt(0).toUpperCase()
-          +patient.last_name.slice(1)%>
-        </p>
-        <p>
-          FIRST_NAME: <%=patient.first_name.charAt(0).toUpperCase()
-          +patient.first_name.slice(1)%>
-        </p>
-        <p>ADDRESS: <%=patient.address%></p>
-        <p>D.O.B: <%=patient.d_o_b%></p>
-        <p>CONTACT: <%=patient.contact%></p>
-        <p>Email: <%=patient.email%></p>
-        <p>
-          INSURANCE: <%=patient.insurance.charAt(0).toUpperCase()
-          +patient.insurance.slice(1)%>
-        </p>
-        <p>Co-Pay: <%=patient.co_pay%></p>
-        <p>
-          SYMPTOMS: <%=patient.symptoms.charAt(0).toUpperCase()
-          +patient.symptoms.slice(1)%>
-        </p>
-        <p>MEDICINE: <%=patient.medicine%></p>
-      </fieldset>
+      <p>
+        LAST_NAME: <%=patient.last_name.charAt(0).toUpperCase()
+        +patient.last_name.slice(1)%>
+      </p>
+      <p>
+        FIRST_NAME: <%=patient.first_name.charAt(0).toUpperCase()
+        +patient.first_name.slice(1)%>
+      </p>
+      <p>ADDRESS: <%=patient.address%></p>
+      <p>D.O.B: <%=patient.d_o_b%></p>
+      <p>CONTACT: <%=patient.contact%></p>
+      <p>Email: <%=patient.email%></p>
+      <p>
+        INSURANCE: <%=patient.insurance.charAt(0).toUpperCase()
+        +patient.insurance.slice(1)%>
+      </p>
+      <p>Co-Pay: <%=patient.co_pay%></p>
+      <p>
+        SYMPOTOMS: <%=patient.symptoms.charAt(0).toUpperCase()
+        +patient.symptoms.slice(1)%>
+      </p>
+      <p>
+        MEDICINE: <%=patient.medicine.charAt(0).toUpperCase()
+        +patient.medicine.slice(1)%>
+      </p>
+      <p>Pick-Up: <%=patient.pick_up.toUpperCase()%></p>
+
       <button class="center">
         <a href="/patients/<%=patient.id%>/edit">Edit Patient Details</a>
       </button>

@@ -25,8 +25,10 @@
       <ol>
         <% for(let i = 0; i < patient.length; i++) { %>
         <li>
-          Last_Name:<a href="/patients/<%=patient[i]._id %>"
-            ><%=patient[i].last_name%></a
+          Last_Name:
+          <a href="/patients/<%=patient[i]._id %>"
+            ><%=patient[i].last_name.charAt(0).toUpperCase()
+            +patient[i].last_name.slice(1)%></a
           >
 
           <!-- <p>FIRST_NAME: <%=patient[i].first_name; %></p>
