@@ -5,7 +5,7 @@ const Symptoms = require("../models/symptoms.js");
 
 router.get("/all", (req, res) => {
   Symptoms.find({}, (error, allSymptoms) => {
-    console.log(allSymptoms);
+    //console.log(allSymptoms);
     res.send(allSymptoms);
   });
 });
@@ -15,8 +15,16 @@ router.get("/seed", (req, res) => {
   Symptoms.create(
     [
       {
-        symptoms: "cold",
-        medicine: "tylinoil"
+        symptoms: "allergy",
+        medicine: "claritin"
+      },
+      {
+        symptoms: "runny nose",
+        medicine: "claritin"
+      },
+      {
+        symptoms: "heavy cold",
+        medicine: "zyritec"
       },
       {
         symptoms: "feaver",
@@ -24,7 +32,27 @@ router.get("/seed", (req, res) => {
       },
       {
         symptoms: "acidity",
-        medicine: "antacid"
+        medicine: "ranitidine"
+      },
+      {
+        symptoms: "nausea",
+        medicine: "ondansetron"
+      },
+      {
+        symptoms: "pain n feaver",
+        medicine: "acetaminophoen"
+      },
+      {
+        symptoms: "cold",
+        medicine: "tylinoil"
+      },
+      {
+        symptoms: "sinus",
+        medicine: "sinex"
+      },
+      {
+        symptoms: "throughing up",
+        medicine: "ondansetron"
       }
     ],
     (err, data) => {
