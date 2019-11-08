@@ -7,7 +7,7 @@ const app = express();
 const db = mongoose.connection;
 
 //port
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 
 //controller
 const patient = require("./controller/patient.js");
@@ -33,12 +33,18 @@ app.use("/users", usersController);
 app.use("/sessions", sessionsController);
 
 //connect mongo db
-mongoose.connect("mongodb://localhost:27017/patient_portals", {
-  useNewUrlParser: true
+// mongoose.connect("mongodb://localhost:27017/patient_portals", {
+//   useNewUrlParser: true
+// });
+const MONGODB_URI =
+  process.env.MONGODB_URI || "mongodb://localhost/patient_potals";
+
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true }, () => {
+  console.log("connected to mongo database");
 });
-mongoose.connection.once("open", () => {
-  console.log("connected to mongo");
-});
+// mongoose.connection.once("open", () => {
+//   console.log("connected to mongo");
+// });
 //sessions
 app.get("/", (req, res) => {
   //console.log(req.session);
@@ -46,6 +52,6 @@ app.get("/", (req, res) => {
 });
 
 //port listen
-app.listen(port, () => {
-  console.log("listening on port", port);
+app.listen(PORT, () => {
+  console.log("listening on port", PORT);
 });

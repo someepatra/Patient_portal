@@ -4,9 +4,10 @@ const User = require("../models/users.js");
 const bcrypt = require("bcrypt");
 
 router.get("/new", (req, res) => {
-  res.render("sessions/new.ejs");
+  res.render("sessions/new.ejs", {
+    error: false
+  });
 });
-
 router.post("/", (req, res) => {
   User.findOne({ username: req.body.username }, (err, foundUser) => {
     if (foundUser) {
@@ -28,6 +29,7 @@ router.post("/", (req, res) => {
     }
   });
 });
+
 router.delete("/", (req, res) => {
   req.session.destroy(() => {
     res.redirect("/");

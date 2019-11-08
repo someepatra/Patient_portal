@@ -3,31 +3,23 @@
   <head>
     <meta charset="utf-8" />
     <title>Log In</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-      crossorigin="anonymous"
-    />
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/main.css" />
   </head>
 
   <body>
-    <nav>
+    <div class="container">
       <h1>
         Welcome to Urgent Care
-        <!-- <% if(currentUser) { %> Welcome <%=currentUser.username%>! <% } else {
-        %> Welcome! <% } %> -->
       </h1>
-      <nav class="nav">
-        <ul>
-          <li class="nav-login"><a href="/sessions/new">Log In</a></li>
-          <li class="nav-register"><a href="/users/new">Register</a></li>
-          <% if(currentUser) { %> <% } %>
-        </ul>
-      </nav>
-    </nav>
-    <% if(currentUser) { %>
-    <!-- <main>Welcome to the <a href="/app">portal</a></main> -->
-    <% } %>
+      <div class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <a href="/sessions/new">Log In</a>
+        <a href="/users/new">Register</a>
+      </div>
+      <img src="/images/portal1.jpg" class="figure-img img-fluid rounded" />
+
+      <% if(currentUser) { %> <% } %>
+    </div>
   </body>
 </html>

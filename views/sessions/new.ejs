@@ -2,32 +2,26 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Sign In </title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/main.css" />
   </head>
 
   <body>
-    <!-- <img src="/images/portal2.jpg" class="img-fluid" alt="Responsive image" /> -->
+    <div class="container">
+      <h1>Sign In</h1>
 
-    <!-- <img src="/images/portal2.jpg" class="rounded float-left" /> -->
+      <% if(typeof error !== 'undefined') {%>
+      <h2>Invalid Input</h2>
+      <%} %>
 
-    <figure class="figure">
-      <img src="/images/portal2.jpg" class="figure-img img-fluid rounded" />
-      <figcaption class="figure-caption"</figcaption>
-    </figure>
-    <h1>Sign In</h1>
+      <form action="/sessions" method="POST">
+        <input type="text" name="username" placeholder="username" />
+        <input type="password" name="password" placeholder="password" />
 
-    <% if(typeof error !== 'undefined') {%>
-    <h2>Invalid Input</h2>
-    <%} %>
-
-    <form action="/sessions" method="POST">
-
-      
-      <input type="text" name="username" placeholder="username" />
-      <input type="password" name="password" placeholder="password"/>
-
-      <input type="submit" class="btn btn-primary"value="Log In" />
-    </form>
+        <input type="submit" class="btn btn-primary" value="Log In" />
+      </form>
+      <img src="/images/portal1.jpg" class="figure-img img-fluid rounded" />
+    </div>
   </body>
 </html>
