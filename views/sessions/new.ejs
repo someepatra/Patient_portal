@@ -8,20 +8,21 @@
   </head>
 
   <body>
+    <h1>Sign In</h1>
     <div class="container">
-      <h1>Sign In</h1>
+      <div class="registration">
+        <% if(typeof error !== 'undefined') {%>
+        <h2>Invalid Input</h2>
+        <%} %>
 
-      <% if(typeof error !== 'undefined') {%>
-      <h2>Invalid Input</h2>
-      <%} %>
+        <form action="/sessions" method="POST">
+          <input type="text" name="username" placeholder="username" />
+          <input type="password" name="password" placeholder="password" />
 
-      <form action="/sessions" method="POST">
-        <input type="text" name="username" placeholder="username" />
-        <input type="password" name="password" placeholder="password" />
-
-        <input type="submit" class="btn btn-primary" value="Log In" />
-      </form>
-      <img src="/images/portal1.jpg" class="figure-img img-fluid rounded" />
+          <input type="submit" class="btn btn-primary" value="Log In" />
+        </form>
+        <img src="/images/portal1.jpg" class="figure-img img-fluid rounded" />
+      </div>
     </div>
   </body>
 </html>

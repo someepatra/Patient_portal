@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 
 router.get("/new", (req, res) => {
   res.render("sessions/new.ejs", {
-    error: false
+    // error: false
   });
 });
 // router.get("/seed", (req, res) => {
