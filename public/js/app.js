@@ -2,7 +2,7 @@ console.log($);
 console.log("good");
 
 $("#check_insurance").on("change", () => {
-  console.log("hello");
+  //console.log("hello");
 
   $("#insurance").toggleClass("hideInsurance");
   $("#insuranceLabel").toggleClass("hideInsurance");
@@ -15,7 +15,7 @@ $("#check_insurance").on("change", () => {
 });
 
 $("#insurance").on("change", () => {
-  console.log("hello");
+  //console.log("hello");
   let co_pay;
   if (
     $("#insurance option:selected").val() === "Atena" ||
