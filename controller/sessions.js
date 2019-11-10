@@ -8,6 +8,24 @@ router.get("/new", (req, res) => {
     error: false
   });
 });
+// router.get("/seed", (req, res) => {
+//   //sessionsController.collection.drop();
+//   sessionsController.create(
+//     [
+//       {
+//         username: "somi",
+//         password: "patra"
+//       },
+//       {
+//         username: "mausumi",
+//         password: "patra"
+//       }
+//     ],
+//     (err, data) => {
+//       res.send(data);
+//     }
+//   );
+// });
 router.post("/", (req, res) => {
   User.findOne({ username: req.body.username }, (err, foundUser) => {
     if (foundUser) {

@@ -12,8 +12,8 @@ const PORT = process.env.PORT || 3000;
 //controller
 const patient = require("./controller/patient.js");
 const symptoms = require("./controller/symptoms.js");
-const usersController = require("./controller/users.js");
-const sessionsController = require("./controller/sessions.js");
+const users = require("./controller/users.js");
+const sessions = require("./controller/sessions.js");
 
 //Middleware
 app.use(express.static("public"));
@@ -29,15 +29,15 @@ app.use(
 );
 app.use("/patients", patient);
 app.use("/symptoms", symptoms);
-app.use("/users", usersController);
-app.use("/sessions", sessionsController);
+app.use("/users", users);
+app.use("/sessions", sessions);
 
 //connect mongo db
 // mongoose.connect("mongodb://localhost:27017/patient_portals", {
 //   useNewUrlParser: true
 // });
 const MONGODB_URI =
-  process.env.MONGODB_URI || "mongodb://localhost/patient_potals";
+  process.env.MONGODB_URI || "mongodb://localhost:27017/patient_portals";
 
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true }, () => {
   console.log("connected to mongo database");
