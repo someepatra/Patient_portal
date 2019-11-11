@@ -46,13 +46,4 @@ $("#symptoms").on("change", () => {
       }
     });
   });
-  //   let medicine = "";
-  //   if ($("#symptoms").val() === "feaver") {
-  //     medicine = "paracetamol";
-  //   } else if ($("#symptoms").val() === "cold") {
-  //     medicine = "tylinol";
-  //   } else {
-  //     console.log("try");
-  //   }
-  //   $("#medicine").val(medicine);
 });
