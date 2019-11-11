@@ -9,17 +9,19 @@
   </head>
 
   <body>
+    <h1>
+      Welcome to Urgent Care
+    </h1>
     <div class="container">
-      <h1>
-        Welcome to Urgent Care
-      </h1>
-      <div class="navbar navbar-light" style="background-color: #e3f2fd;">
-        <a href="/sessions/new">Log In</a>
-        <a href="/users/new">Register</a>
-      </div>
-      <img src="/images/portal1.jpg" class="figure-img img-fluid rounded" />
+      <div class="registration">
+        <div class="navbar navbar-light" style="background-color: #e3f2fd;">
+          <a href="/sessions/new">Log In</a>
+          <a href="/users/new">Register</a>
+        </div>
+        <img src="/images/portal1.jpg" class="figure-img img-fluid rounded" />
 
-      <% if(currentUser) { %> <% } %>
+        <% if(currentUser) { %> <% } %>
+      </div>
     </div>
   </body>
 </html>
