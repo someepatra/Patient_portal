@@ -58,6 +58,7 @@ Patient Registration form can enter the following details to maintain the histor
 5. Ward Details:
 
 Employees can able to see the following details of a specific patient and able to make changes the details of the existing patient by clicking on the edit patient details link.Employess has the ability to delete the existing patient details by clicking on the delete button which patient does not exist.
+<<<<<<< HEAD
 
 - Last Name
 - First Name
@@ -69,7 +70,20 @@ Employees can able to see the following details of a specific patient and able t
 - Co Pay
 - Symptoms
 - Medicine
-- Pickup
+- # Pickup
+
+* Last Name
+* First Name
+* Address
+* DOB
+* Contact
+* Email ID
+* Insurance Details
+* Co Pay
+* Symptoms
+* Medicine
+* Pickup
+  > > > > > > > f9e5c01112a0c25ff61624a1de4db21068085171
 
 ![alt text](images/audio.png "Audio")
 
