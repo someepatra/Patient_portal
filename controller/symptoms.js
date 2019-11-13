@@ -39,7 +39,7 @@ router.get("/seed", (req, res) => {
         medicine: "ondansetron"
       },
       {
-        symptoms: "pain n feaver",
+        symptoms: "pain n fever",
         medicine: "acetaminophoen"
       },
       {

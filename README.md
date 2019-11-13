@@ -77,7 +77,7 @@ The patient portal is responsive and can be viewed in any devices.
 
 # My Web Page
 
-https://patientsportal.herokuapp.com/patients
+https://patientsportal.herokuapp.com
 
 # Created By
 
