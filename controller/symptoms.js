@@ -27,7 +27,7 @@ router.get("/seed", (req, res) => {
         medicine: "zyritec"
       },
       {
-        symptoms: "feaver",
+        symptoms: "fever",
         medicine: "paracetamol"
       },
       {
@@ -39,7 +39,7 @@ router.get("/seed", (req, res) => {
         medicine: "ondansetron"
       },
       {
-        symptoms: "fever",
+        symptoms: "heavy fever ",
         medicine: "acetaminophoen"
       },
       {
