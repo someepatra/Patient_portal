@@ -34,7 +34,7 @@ $(() => {
     $("#co_pay").val(co_pay);
   });
 
-  $("#symptoms").on("change", () => {
+  $("#symptoms").change(() => {
     const endpoint = "http://localhost:3000/symptoms/all";
 
     $.ajax({
