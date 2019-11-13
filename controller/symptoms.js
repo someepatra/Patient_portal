@@ -44,7 +44,7 @@ router.get("/seed", (req, res) => {
       },
       {
         symptoms: "cold",
-        medicine: "tylinoil"
+        medicine: "tylenol"
       },
       {
         symptoms: "sinus",

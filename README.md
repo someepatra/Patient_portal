@@ -26,17 +26,14 @@ The registered employees can accomplish the following opeartions in the patient 
 1. Login:
 
 The registered employee can login to the patient portal with a valid credentials and can view the patient history
-![alt text](images/search.png "Search")
 
 2. Register:
 
 New employee can register to the patient portal by providing the valid user name and password. Once registration process is done. The newly registered employee can login to the patient portal and view the patient history.
-![alt text](images/optionbutton.png "Optionbutton")
 
 3. All existing Patients Page :
 
 Employees can able to see the existing patient details by clicking on the last name of the patient as well as ,employees can enter the details of the new patient by clicking on the add a new patients link.
-![alt text](images/carousel.png "Carousel")
 
 4. Patient Registration Form:
 
@@ -53,12 +50,18 @@ Patient Registration form can enter the following details to maintain the histor
 - Symptoms
 - Medicine
 - Pickup
+<<<<<<< HEAD
   ![alt text](images/readmore.png "Readmore")
+=======
+>>>>>>> 7637afee1871401137229d0ff14252880712277a
 
 5. Ward Details:
 
 Employees can able to see the following details of a specific patient and able to make changes the details of the existing patient by clicking on the edit patient details link.Employess has the ability to delete the existing patient details by clicking on the delete button which patient does not exist.
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7637afee1871401137229d0ff14252880712277a
 
 - Last Name
 - First Name
@@ -70,6 +73,7 @@ Employees can able to see the following details of a specific patient and able t
 - Co Pay
 - Symptoms
 - Medicine
+<<<<<<< HEAD
 - # Pickup
 
 * Last Name
@@ -86,30 +90,19 @@ Employees can able to see the following details of a specific patient and able t
   > > > > > > > f9e5c01112a0c25ff61624a1de4db21068085171
 
 ![alt text](images/audio.png "Audio")
+=======
+- Pickup
+>>>>>>> 7637afee1871401137229d0ff14252880712277a
 
 6. Hover:
 
 The background color and Font size of each button will change while mouse hovering.
-![alt text](images/hover.png "Hover")
 
 7. Responsiveness:
 
 The patient portal is responsive and can be viewed in any devices.
 
-- Desktop View:
-  ![alt text](images/desktop.png "Desktop")
-
-- Mobile View :
-  ![alt text](images/phone.png "Phone")
-
-- IPAD View:
-  ![alt text](images/ipad.png "Ipad")
-
 # My Web Page
-
-http://teatime-news.surge.sh/
-
-https://vigilant-engelbart-0e99cd.netlify.com/
 
 # Created By
 
