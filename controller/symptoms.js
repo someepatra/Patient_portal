@@ -43,10 +43,6 @@ router.get("/seed", (req, res) => {
         medicine: "sinex"
       },
       {
-        symptoms: "cough",
-        medicine: "delsym"
-      },
-      {
         symptoms: "throughing up",
         medicine: "ondansetron"
       }
