@@ -35,7 +35,7 @@ $(() => {
   });
 
   $("#symptoms").change(() => {
-    const endpoint = "http://localhost:3000/symptoms/all";
+    const endpoint = "https://patientsportal.herokuapp.com/symptoms/all";
 
     $.ajax({
       url: endpoint
