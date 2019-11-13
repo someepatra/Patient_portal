@@ -35,10 +35,6 @@ router.get("/seed", (req, res) => {
         medicine: "ondansetron"
       },
       {
-        symptoms: "temperature",
-        medicine: "acetaminophoen"
-      },
-      {
         symptoms: "cold",
         medicine: "tylenol"
       },
@@ -47,7 +43,7 @@ router.get("/seed", (req, res) => {
         medicine: "sinex"
       },
       {
-        symptoms: "throughing up",
+        symptoms: "c",
         medicine: "ondansetron"
       }
     ],
